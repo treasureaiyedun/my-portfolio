@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero-height {
+  height: calc(100vh - 70px);
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #9259F7, #2EBAE7,  #6964DE, #FCA6E9, #F4426C 50%, #D24074 100%); /* Adjust colors as needed */
+  -webkit-background-clip: text; /* For Webkit browsers */
+  background-clip: text; /* Standard background-clip property */
+  color: transparent; /* Transparent text allows background to show through */
+}
