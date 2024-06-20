@@ -1,15 +1,21 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+// import Projects from './pages/Projects'
+import { Contact } from 'lucide-react'
+import ContactMe from './pages/ContactMe'
+import Home from './pages/Home'
+
+
 const App = () => {
 
   return (
-    <div className="w-full flex justify-center min-h-screen">
-      <div className="w-4/5">
-        <Navbar />
-        <Hero />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/projects" element={<Projects />} /> */}
+        <Route path="/contact" element={<ContactMe />} />
+        </Routes>
+    </Router>
   )
 
 }
