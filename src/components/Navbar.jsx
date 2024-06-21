@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import ThemeController from './ThemeController';
+// import ThemeController from './ThemeController';
 const Navbar = () => {
 
   const projectsRef = useRef(null);
@@ -18,7 +18,7 @@ const Navbar = () => {
         <li><a href="#projects" onClick={handleScrollToProjects}>Projects</a></li>
         <li>Resume</li>
         <li><NavLink activeclassname="active" to="/contact">Contact</NavLink></li>
-        <li><ThemeController/></li>
+        {/* <li><ThemeController/></li> */}
       </ul>
     )
   }

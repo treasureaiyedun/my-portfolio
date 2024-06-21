@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import { Moon, Sun } from 'lucide-react'
+import { Sun, Moon } from 'lucide-react'
 import { useContext } from 'react'
 
 const ThemeController = () => {
@@ -22,12 +22,12 @@ const ThemeController = () => {
 
     return (
             <label onClick={handleThemeChange} className="swap swap-rotate">
+                {/* moon icon */}
+                {theme && <Moon/>}
 
                 {/* sun icon */}
                {!theme && <Sun/>}
 
-                {/* moon icon */}
-                {theme && <Moon/>}
 
             </label>
     )
