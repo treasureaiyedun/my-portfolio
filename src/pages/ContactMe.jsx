@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { RiLinkedinBoxFill, RiGithubFill } from '@remixicon/react'
 import { useContext } from 'react'
 // import Navbar from '../components/Navbar'
 
@@ -8,6 +9,7 @@ const ContactMe = () => {
   const [email, setEmail] = useState("")
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
+  // const [isPending, setIsPending] = useState(false);
 
   const handleChange = (e) => {
     setName(e.target.value)
@@ -29,6 +31,8 @@ const ContactMe = () => {
     e.preventDefault()
     const contact = { name, email, subject, message };
 
+    // setIsPending(true)
+    
     try {
       const response = await fetch("http://localhost:5000/contacts", {
         method: "POST",
@@ -40,7 +44,9 @@ const ContactMe = () => {
         }
 
         const data = await response.json()
-        console.log(data)
+        console.log(data);
+
+        // setIsPending(false)
       
     } catch (error) {
       console.log(error)
@@ -53,7 +59,7 @@ const ContactMe = () => {
         {/* <Navbar /> */}
         <div className="w-4/5 flex flex-col lg:flex-row">
           <div className="lg:w-1/2">
-            <h1 className="text-4xl font-bold mt-10 contact-bg">Contact Me</h1>
+            <h1 className="text-4xl font-bold mt-10">Contact Me</h1>
             <p className="mt-4">Feel free to reach out to me at <a className="relative" href="mailto:treasureaiyedun01@gmail.com"> <span>treasureaiyedun01@gmail.com</span>
               <span className="absolute left-1 right-1 bottom-0 h-[1px] bg-[#4a7ac8]"></span>
             </a></p>
@@ -62,6 +68,10 @@ const ContactMe = () => {
               <span className="absolute left-1 right-1 bottom-0 h-[1px] bg-[#804AC8]"></span>
             </button>
             </h1>
+            <div className="flex space-x-3 w-full mt-3">
+        <a href="https://github.com/treasureaiyedun/"><RiGithubFill/></a>
+        <a href="https://www.linkedin.com/in/treasure-aiyedun-299774275/"><RiLinkedinBoxFill/></a>
+        </div>
           </div>
 
 
@@ -112,7 +122,11 @@ const ContactMe = () => {
               className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-[#4a7ac8]">
             </textarea>
 
-            <button className="bg-pink-200 text-[#4b4b4b] text-center w-24 py-3 rounded-lg font-semibold hover:bg-[#dc6bc3] transition-colors duration-300">Submit</button>
+           <button 
+            className="bg-[#2b2626] text-white text-center w-24 py-3 rounded-lg font-semibold hover:bg-black transition-colors duration-300">
+              Submit
+             {/* {isPending ? "Submit" : "Submitting"}  */}
+              </button>
             
           </form>
         </div>

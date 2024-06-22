@@ -12,12 +12,14 @@
     "concurrently": "concurrently \"npm run json-server\" \"npm run dev\""
   },
   "dependencies": {
+    "@remixicon/react": "^4.2.0",
     "concurrently": "^8.2.2",
     "json-server": "^1.0.0-beta.1",
     "lucide-react": "^0.395.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.23.1"
+    "react-router-dom": "^6.23.1",
+    "remixicon": "^4.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
