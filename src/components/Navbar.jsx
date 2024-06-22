@@ -16,7 +16,7 @@ const Navbar = () => {
     return (
       <ul className="lg:flex list-none gap-5">
         <li><a href="#projects" onClick={handleScrollToProjects}>Projects</a></li>
-        <li>Resume</li>
+        <li><a href="https://drive.google.com/file/d/1jmP4XLOJiiNSZVDYzASLGZx3mXc2Vj81/view">Resume</a></li>
         <li><NavLink activeclassname="active" to="/contact">Contact</NavLink></li>
         {/* <li><ThemeController/></li> */}
       </ul>
