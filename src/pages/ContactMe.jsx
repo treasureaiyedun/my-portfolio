@@ -9,7 +9,7 @@ const ContactMe = () => {
   const [email, setEmail] = useState("")
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
-  // const [isPending, setIsPending] = useState(false);
+  const [isPending, setIsPending] = useState(false);
 
   const handleChange = (e) => {
     setName(e.target.value)
@@ -31,7 +31,7 @@ const ContactMe = () => {
     e.preventDefault()
     const contact = { name, email, subject, message };
 
-    // setIsPending(true)
+    setIsPending(true)
     
     try {
       const response = await fetch("http://localhost:5000/contacts", {
@@ -46,7 +46,7 @@ const ContactMe = () => {
         const data = await response.json()
         console.log(data);
 
-        // setIsPending(false)
+        setIsPending(false)
       
     } catch (error) {
       console.log(error)
@@ -64,7 +64,7 @@ const ContactMe = () => {
               <span className="absolute left-1 right-1 bottom-0 h-[1px] bg-[#4a7ac8]"></span>
             </a></p>
             <h1 className="font-light">For more info, here's my<button className="relative px-2 inline-block">
-              <a href="https://drive.google.com/file/d/1jmP4XLOJiiNSZVDYzASLGZx3mXc2Vj81/view"><span className=""> resume</span></a>
+              <a href="https://drive.google.com/file/d/1jmP4XLOJiiNSZVDYzASLGZx3mXc2Vj81/view"><span className="">resume</span></a>
               <span className="absolute left-1 right-1 bottom-0 h-[1px] bg-[#804AC8]"></span>
             </button>
             </h1>
@@ -124,8 +124,8 @@ const ContactMe = () => {
 
            <button 
             className="bg-[#2b2626] text-white text-center w-24 py-3 rounded-lg font-semibold hover:bg-black transition-colors duration-300">
-              Submit
-             {/* {isPending ? "Submit" : "Submitting"}  */}
+              {/* Submit */}
+             {isPending ? "Submitting" : "Submit"} 
               </button>
             
           </form>

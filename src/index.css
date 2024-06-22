@@ -28,8 +28,8 @@
   -webkit-background-clip: text; /* For Webkit browsers */
   background-clip: text; /* Standard background-clip property */
   color: transparent; /* Transparent text allows background to show through */
+}
 
-  .text-area{
-    resize: none;
-  }
+.side-bar{
+  transition: filter 0.3s ease-in-out; 
 }
