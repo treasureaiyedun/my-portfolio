@@ -55,7 +55,7 @@ const ContactMe = () => {
 
   return (
     <>
-      <div className="w-full flex lg:flex-col items-center justify-center min-h-screen dark:bg-slate-900 dark:text-white ">
+      <div className="w-full flex lg:flex-col items-center justify-center min-h-screen">
         {/* <Navbar /> */}
         <div className="w-4/5 flex flex-col lg:flex-row">
           <div className="lg:w-1/2">
