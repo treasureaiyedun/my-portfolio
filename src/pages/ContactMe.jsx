@@ -119,7 +119,7 @@ const ContactMe = () => {
               name="message"
               value={message}
               onChange={handleMessageChange}
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-[#4a7ac8]">
+              className="border border-gray-300 rounded-lg px-4 py-2 resize-none focus:outline-none focus:border-[#4a7ac8]">
             </textarea>
 
            <button 
