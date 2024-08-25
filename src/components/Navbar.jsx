@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-// import ThemeController from './ThemeController';
+import ThemeController from './ThemeController';
 const Navbar = () => {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navbar = () => {
         <li><a href="#projects" onClick={handleScrollToProjects}>Projects</a></li>
         <li><a href="https://drive.google.com/file/d/1jmP4XLOJiiNSZVDYzASLGZx3mXc2Vj81/view">Resume</a></li>
         <li><NavLink activeclassname="active" to="/contact">Contact</NavLink></li>
-        {/* <li><ThemeController/></li> */}
+        <li><ThemeController/></li>
       </ul>
 
       <ul className="lg:flex hidden list-none gap-5">
@@ -29,7 +29,7 @@ const Navbar = () => {
         <li><a href="#projects" onClick={handleScrollToProjects}>Projects</a></li>
         <li><a href="https://drive.google.com/file/d/1jmP4XLOJiiNSZVDYzASLGZx3mXc2Vj81/view">Resume</a></li>
         <li><NavLink activeclassname="active" to="/contact">Contact</NavLink></li>
-        {/* <li><ThemeController/></li> */}
+        <li><ThemeController/></li>
       </ul>
       </>
        
