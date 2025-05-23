@@ -2,8 +2,12 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 // import Projects from './pages/Projects'
 import { Contact } from 'lucide-react'
-import ContactMe from './pages/ContactMe'
+import ContactMe from './components/ContactMe'
 import Home from './pages/Home'
+// import { ThemeProvider } from './components/ThemeController'
+// import { ThemeToggle } from './components/ThemeToggle'
+// import { useTheme } from './components/ThemeProvider'
+
 
 
 const App = () => {

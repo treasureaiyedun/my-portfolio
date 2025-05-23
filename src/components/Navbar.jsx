@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import ThemeController from './ThemeController';
+import ThemeController from './ThemeToggle';
 const Navbar = () => {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
