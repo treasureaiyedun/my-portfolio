@@ -5,17 +5,18 @@ import Projects from '../components/Projects'
 import Footer from '../components/Footer'
 import ContactMe from '../components/ContactMe'
 import { ThemeProvider } from '../contexts/ThemeContext'
-// import { ThemeProvider } from '../components/ThemeController'
+import AboutMe from '../components/AboutMe'
 
 
 
 const Home = () => {
   return (
     <ThemeProvider>
-      <div className="w-full flex justify-center min-h-screen text-black dark:text-white bg-white dark:bg-[#061337]">
+      <div className="w-full flex justify-center min-h-screen text-black dark:text-white bg-white dark:bg-[#0f0f0f]">
         <div className="w-4/5">
           <Navbar />
           <Hero />
+          <AboutMe />
           <Projects />
           <ContactMe />
           <Footer />

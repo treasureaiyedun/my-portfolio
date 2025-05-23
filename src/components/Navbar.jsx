@@ -17,19 +17,19 @@ const Navbar = () => {
     return (
       <>
       <ul className="lg:hidden flex flex-col list-none gap-5 absolute side-bar items-center justify-center py-4 bg-white rounded-xl w-full z-50 px-20 space-y-5 h-screen">
-
+        <li><a href="#about">About Me</a></li>
         <li><a href="#projects" onClick={handleScrollToProjects}>Projects</a></li>
         <li><a href="https://drive.google.com/file/d/1jmP4XLOJiiNSZVDYzASLGZx3mXc2Vj81/view">Resume</a></li>
         <li><NavLink activeclassname="active" to="/contact">Contact</NavLink></li>
-        <li><ThemeController/></li>
+        <li><ThemeController /></li>
       </ul>
 
       <ul className="lg:flex hidden list-none gap-5">
-
+                <li><a href="#about">About Me</a></li>
         <li><a href="#projects" onClick={handleScrollToProjects}>Projects</a></li>
         <li><a href="https://drive.google.com/file/d/1jmP4XLOJiiNSZVDYzASLGZx3mXc2Vj81/view">Resume</a></li>
         <li><NavLink activeclassname="active" to="/contact">Contact</NavLink></li>
-        <li><ThemeController/></li>
+        <li><ThemeController /></li>
       </ul>
       </>
        
