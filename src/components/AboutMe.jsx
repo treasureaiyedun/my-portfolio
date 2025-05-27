@@ -15,7 +15,7 @@ const AboutMe = () => {
       <h1 className="text-center text-2xl font-medium pt-10">About Me</h1>
 
       <div className=''>
-        <p className="mb-20 text-center">I am a frontend developer with a passion for creating engaging and user-friendly web experiences. With over two years of experience, I am enthusiastic about collaborating with teams to bring creative designs to life and contribute to building intuitive interface for users.  I am eager to learn and grow in the dynamic world of web development.</p>
+        <p className="mb-20 md:text-center text-justify">I am a frontend developer with a passion for creating engaging and user-friendly web experiences. With over two years of experience, I am enthusiastic about collaborating with teams to bring creative designs to life and contribute to building intuitive interface for users.  I am eager to learn and grow in the dynamic world of web development.</p>
       </div>
 
       <h1 className="text-center text-2xl font-medium py-10">My Tech Stack</h1>
