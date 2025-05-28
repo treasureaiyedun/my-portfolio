@@ -1,46 +1,162 @@
-import React, { useRef } from 'react'
-import AtomicLite from '../assets/images/Atomic-Lite.png'
-import ExpressVPN from '../assets/images/Express-VPN.png'
-import LobeTour from '../assets/images/Lobe-tour.png'
+import { useState, useEffect } from "react"
+import AtomicLite from "../assets/images/Atomic-Lite.png"
+import ExpressVPN from "../assets/images/Express-VPN.png"
+import LobeTour from "../assets/images/Lobe-tour.png"
 import TechWorld from "../assets/images/Tech-World.png"
-import { Link } from 'lucide-react'
-
+import Bumbu from "../assets/images/Bumbu.png"
+import { Link, ChevronLeft, ChevronRight } from "lucide-react"
+import { RiGithubFill } from "@remixicon/react"
 const Projects = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
 
-  const targetRef = useRef(null);
+  const projects = [
+    {
+      id: 1,
+      image: AtomicLite,
+      title: "Atomic Lite",
+      description: "A recreation of the Atomic Lite Theme by GiantFocal.",
+      tech: "HTML - CSS",
+      demoUrl: "https://treasureaiyedun.github.io/atomic-lite/",
+      githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
+    },
+    {
+      id: 2,
+      image: TechWorld,
+      title: "Tech World",
+      description: "A UI that shows the tech-world!",
+      tech: "ReactJS - TailwindCSS",
+      demoUrl: "https://tech-world-chi.vercel.app/",
+      githubUrl: "https://github.com/treasureaiyedun/tech-world"
+
+    },
+    {
+      id: 3,
+      image: LobeTour,
+      title: "Lobe Tour",
+      description: "A recreation of Microsoft's Lobe Tour website.",
+      tech: "HTML - TailwindCSS",
+      demoUrl: "#",
+      githubUrl: "https://github.com/treasureaiyedun/lobe-tour"
+
+    },
+    // {
+    //   id: 4,
+    //   image: ExpressVPN,
+    //   title: "Express VPN",
+    //   description: "A modern VPN service landing page design.",
+    //   tech: "ReactJS - CSS",
+    //   demoUrl: "#",
+    //   githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
+
+    // },
+    {
+      id: 5,
+      image: Bumbu,
+      title: "Bumbu App",
+      description: "A website for a car trading app.",
+      tech: "ReactJS - TailwindCSS",
+      demoUrl: "https://bumbu-app.vercel.app/",
+      githubUrl: "https://github.com/treasureaiyedun/bumbu-app"
+
+    }
+  ]
+
+  useEffect(() => {
+    if (isPaused) return
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [isPaused, projects.length])
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? projects.length - 1 : prevIndex - 1))
+  }
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
+  }
+
+  const visibleProjects = () => {
+    const result = []
+    for (let i = 0; i < 3; i++) {
+      const index = (currentIndex + i) % projects.length
+      result.push(projects[index])
+    }
+    return result
+  }
+
   return (
-    <div ref={targetRef} id="projects" className="lg:h-screen flex flex-col justify-center border-b-[1px] border-gray-300 dark:border-gray-300 ">
+    <div
+      id="projects"
+      className="lg:h-screen flex flex-col justify-center border-b-[1px] border-gray-300 dark:border-gray-300"
+    >
       <div className="lg:my-24 text-2xl font-bold my-8 md:my-12">Featured Projects</div>
-      <div className="flex flex-col lg:flex-row justify-between lg:space-x-10 md:flex md:justify-center md:items-center">
-        <div className="card-1 w-full lg:w-2/5 md:w-3/5 mb-8 lg:mb-0">
-          <img src={AtomicLite} alt="" />
-          <h1 className="uppercase font-medium mt-2">Atomic Lite</h1>
-          <p className="mt-2">
-            A recreation of the Atomic Lite Theme by GiantFocal.
-          </p>
-          <p className="text-xs text-blue-500 mt-4">HTML - CSS</p>
-          <a href="#" className="flex mt-4 hover:text-blue-500"><Link /><p className="ml-2">Live Demo</p></a>
 
+      <div className="relative mx-auto" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+        {/* Left Arrow */}
+        <button
+          onClick={goToPrevious}
+          className="absolute -left-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center"
+          aria-label="Previous project"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+
+        {/* Right Arrow */}
+        <button
+          onClick={goToNext}
+          className="absolute -right-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center"
+          aria-label="Next project"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+
+        {/* Projects Display */}
+        <div className="flex flex-col lg:flex-row justify-between lg:space-x-6 md:flex md:justify-center md:items-center">
+          {visibleProjects().map((project, idx) => (
+            <div
+              key={project.id}
+              className={`card-1 transition-all duration-300 w-full lg:w-1/3 md:w-3/5 mb-8 lg:mb-0
+                ${idx === 1 ? 'lg:scale-110 lg:z-10' : 'lg:scale-90 lg:opacity-70'}
+                hover:scale-100 hover:z-20 hover:opacity-100`}
+            >
+              <img src={project.image || "/placeholder.svg"} alt={project.title} className="w-full h-auto rounded-lg shadow-lg" />
+              <h1 className="uppercase font-medium mt-2">{project.title}</h1>
+              <p className="mt-2">{project.description}</p>
+              <p className="text-xs text-blue-500 mt-4">{project.tech}</p>
+              <div className="flex justify-between">
+                <div>
+                  <a href={project.demoUrl} className="flex mt-4 hover:text-blue-500">
+                <Link />
+                <p className="ml-2">Live Demo</p>
+              </a>
+                </div>
+                <div>
+                  <a href={project.githubUrl} className="flex mt-4 ml-4 hover:text-blue-500">
+                <RiGithubFill /> 
+                </a>
+                </div>
+              </div>
+              
+            </div>
+          ))}
         </div>
 
-        <div className="card-1 lg:w-2/5 md:w-3/5 mb-8 lg:mb-0">
-          <img src={TechWorld} alt="" />
-          <h1 className="uppercase font-medium mt-2">Tech World</h1>
-          <p className="mt-2">
-            A UI that shows the tech-world!
-          </p>
-          <p className="text-xs text-blue-500 mt-4">ReactJS - TailwindCSS</p>
-          <a href="#" className="flex mt-4 hover:text-blue-500"><Link /><p className="ml-2">Live Demo</p></a>
-        </div>
-
-        <div className="card-1 lg:w-2/5 md:w-3/5 mb-8 lg:mb-0">
-          <img src={LobeTour} alt="" />
-          <h1 className="uppercase font-medium mt-2">Lobe Tour</h1>
-          <p className="mt-2">
-            A recreation of Microsoft's Lobe Tour website.
-          </p>
-          <p className="text-xs text-blue-500 mt-4">HTML - TailwindCSS</p>
-          <a href="#" className="flex mt-4 hover:text-blue-500"><Link /><p className="ml-2">Live Demo</p></a>
+        {/* Indicators */}
+        <div className="flex justify-center mt-6 space-x-2">
+          {projects.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full ${index === currentIndex ? "bg-blue-500" : "bg-gray-300 dark:bg-gray-600"
+                }`}
+              aria-label={`Go to project ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </div>

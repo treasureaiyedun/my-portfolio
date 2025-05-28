@@ -70,7 +70,7 @@ const handleSubmit = async (e) => {
 
 return (
   <>
-    <div className="w-full flex lg:flex-col items-center justify-center min-h-screen">
+    <div className="w-full flex lg:flex-col items-center justify-center min-h-screen" id="contact">
       <div className="w-full flex flex-col lg:flex-row">
         <div className="lg:w-1/2">
           <h1 className="text-4xl font-bold mt-10">Contact Me</h1>

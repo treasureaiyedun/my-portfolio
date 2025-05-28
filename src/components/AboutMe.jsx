@@ -11,7 +11,7 @@ import github from '../assets/images/github.png'
 
 const AboutMe = () => {
   return (
-    <div className="leading-relaxed space-y-3 ">
+    <div className="leading-relaxed min-h-[80vh]  lg:pt-10 border-t-[1px] border-black dark:border-gray-300" id="about">
       <h1 className="text-center text-2xl font-medium pt-10">About Me</h1>
 
       <div className=''>
@@ -19,7 +19,7 @@ const AboutMe = () => {
       </div>
 
       <h1 className="text-center text-2xl font-medium py-10">My Tech Stack</h1>
-      <div className="flex-wrap hidden md:flex justify-between items-center gap-4 mt-20 overflow-x-auto">
+      <div className="flex-wrap hidden md:flex justify-between items-center gap-4 overflow-x-auto">
         <div>
           <img src={html} alt="HTML" className="w-16 h-16" />
           <p className='text-center uppercase'>html</p>

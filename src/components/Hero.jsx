@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <>
       <div className="">
-        <div className="flex w-full justify-between items-center hero-height text-left border-b-[1px] border-black dark:border-gray-300">
+        <div className="flex w-full justify-between items-center hero-height text-left ">
           <div className="flex flex-col">
             <p className="block w-full">Hey, I'm</p>
             <p className="text-4xl md:text-6xl lg:text-6xl gradient-text font-bold block w-full py-2 my-4">Treasure Aiyedun</p>
