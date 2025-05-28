@@ -6,6 +6,7 @@ import TechWorld from "../assets/images/Tech-World.png"
 import Bumbu from "../assets/images/Bumbu.png"
 import { Link, ChevronLeft, ChevronRight } from "lucide-react"
 import { RiGithubFill } from "@remixicon/react"
+
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -27,8 +28,7 @@ const Projects = () => {
       description: "A UI that shows the tech-world!",
       tech: "ReactJS - TailwindCSS",
       demoUrl: "https://tech-world-chi.vercel.app/",
-      githubUrl: "https://github.com/treasureaiyedun/tech-world"
-
+      githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
     },
     {
       id: 3,
@@ -37,19 +37,17 @@ const Projects = () => {
       description: "A recreation of Microsoft's Lobe Tour website.",
       tech: "HTML - TailwindCSS",
       demoUrl: "#",
-      githubUrl: "https://github.com/treasureaiyedun/lobe-tour"
-
+      githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
     },
-    // {
-    //   id: 4,
-    //   image: ExpressVPN,
-    //   title: "Express VPN",
-    //   description: "A modern VPN service landing page design.",
-    //   tech: "ReactJS - CSS",
-    //   demoUrl: "#",
-    //   githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
-
-    // },
+    {
+      id: 4,
+      image: ExpressVPN,
+      title: "Express VPN",
+      description: "A modern VPN service landing page design.",
+      tech: "ReactJS - CSS",
+      demoUrl: "#",
+      githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
+    },
     {
       id: 5,
       image: Bumbu,
@@ -57,8 +55,7 @@ const Projects = () => {
       description: "A website for a car trading app.",
       tech: "ReactJS - TailwindCSS",
       demoUrl: "https://bumbu-app.vercel.app/",
-      githubUrl: "https://github.com/treasureaiyedun/bumbu-app"
-
+      githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
     }
   ]
 
@@ -82,7 +79,8 @@ const Projects = () => {
 
   const visibleProjects = () => {
     const result = []
-    for (let i = 0; i < 3; i++) {
+    const numProjects = window.innerWidth < 768 ? 1 : 3
+    for (let i = 0; i < numProjects; i++) {
       const index = (currentIndex + i) % projects.length
       result.push(projects[index])
     }
@@ -100,7 +98,7 @@ const Projects = () => {
         {/* Left Arrow */}
         <button
           onClick={goToPrevious}
-          className="absolute -left-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center"
+          className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center"
           aria-label="Previous project"
         >
           <ChevronLeft className="h-6 w-6" />
@@ -109,39 +107,38 @@ const Projects = () => {
         {/* Right Arrow */}
         <button
           onClick={goToNext}
-          className="absolute -right-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center"
+          className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center"
           aria-label="Next project"
         >
           <ChevronRight className="h-6 w-6" />
         </button>
 
         {/* Projects Display */}
-        <div className="flex flex-col lg:flex-row justify-between lg:space-x-6 md:flex md:justify-center md:items-center">
+        <div className="flex flex-col md:flex-row justify-between md:space-x-6 items-center">
           {visibleProjects().map((project, idx) => (
             <div
               key={project.id}
-              className={`card-1 transition-all duration-300 w-full lg:w-1/3 md:w-3/5 mb-8 lg:mb-0
-                ${idx === 1 ? 'lg:scale-110 lg:z-10' : 'lg:scale-90 lg:opacity-70'}
+              className={`card-1 transition-all duration-300 w-full md:w-1/3 mb-8 md:mb-0
+                ${idx === 1 ? 'md:scale-110 md:z-10' : 'md:scale-90 md:opacity-70'}
                 hover:scale-100 hover:z-20 hover:opacity-100`}
             >
-              <img src={project.image || "/placeholder.svg"} alt={project.title} className="w-full h-auto rounded-lg shadow-lg" />
-              <h1 className="uppercase font-medium mt-2">{project.title}</h1>
+              <img src={project.image} alt={project.title} className="w-full h-auto rounded-lg shadow-lg" />
+              <h1 className="uppercase font-medium mt-2 pl-6">{project.title}</h1>
               <p className="mt-2">{project.description}</p>
               <p className="text-xs text-blue-500 mt-4">{project.tech}</p>
               <div className="flex justify-between">
                 <div>
                   <a href={project.demoUrl} className="flex mt-4 hover:text-blue-500">
-                <Link />
-                <p className="ml-2">Live Demo</p>
-              </a>
+                    <Link />
+                    <p className="ml-2">Live Demo</p>
+                  </a>
                 </div>
                 <div>
                   <a href={project.githubUrl} className="flex mt-4 ml-4 hover:text-blue-500">
-                <RiGithubFill /> 
-                </a>
+                    <RiGithubFill className="text-xl" />
+                  </a>
                 </div>
               </div>
-              
             </div>
           ))}
         </div>
@@ -152,8 +149,9 @@ const Projects = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full ${index === currentIndex ? "bg-blue-500" : "bg-gray-300 dark:bg-gray-600"
-                }`}
+              className={`w-2 h-2 rounded-full ${
+                index === currentIndex ? "bg-blue-500" : "bg-gray-300 dark:bg-gray-600"
+              }`}
               aria-label={`Go to project ${index + 1}`}
             />
           ))}
