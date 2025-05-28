@@ -124,7 +124,7 @@ const Projects = () => {
             >
               <img src={project.image} alt={project.title} className="w-full h-auto rounded-lg shadow-lg" />
               <h1 className="uppercase font-medium mt-2 pl-6">{project.title}</h1>
-              <p className="mt-2">{project.description}</p>
+              <p className="mt-3">{project.description}</p>
               <p className="text-xs text-blue-500 mt-4">{project.tech}</p>
               <div className="flex justify-between">
                 <div>
