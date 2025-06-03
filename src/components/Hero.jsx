@@ -15,7 +15,7 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl  lg:text-5xl font-bold leading-tight mb-8">
+          <h1 className="text-5xl font-bold leading-tight mb-8">
             I'm{" "}
             <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
               Treasure Aiyedun
