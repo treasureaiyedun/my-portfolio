@@ -23,7 +23,7 @@ export default function ContactSection() {
     try {
       await new Promise((r) => setTimeout(r, 1500));
 
-      const res = await fetch("https://formsubmit.co/ajax/treasureaiyedun01@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/fab657a1391d038ab6d2d164e865d2a1 ", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
