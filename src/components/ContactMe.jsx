@@ -46,11 +46,11 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-screen w-full py-20 px-6 lg:px-20 text-black dark:text-white"
+      className="min-h-screen w-full py-20 lg:px-20 text-black dark:text-white"
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center md:items-start">
         {/* Left column */}
-        <div>
+        <div className="px-6 md:px-0">
           <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
           <p className="text-lg mb-4">
             Feel free to reach out to me at {" "}
@@ -96,7 +96,7 @@ export default function ContactSection() {
         {/* Right column (form) */}
         <form
           onSubmit={handleSubmit}
-          className=" px-6 rounded-lg shadow-lg space-y-4"
+          className=" px-6 rounded-lg space-y-4"
         >
           {[
             { label: "Name", id: "name", type: "text" },
@@ -139,7 +139,7 @@ export default function ContactSection() {
             disabled={isPending}
             className="w-full md:w-40 relative p-[1px] rounded-full focus:outline-none disabled:opacity-60 bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-110"
           >
-            <span className="block w-full rounded-full bg-white dark:bg-[#0f0f0f] py-3 text-center font-semibold transition-colors">
+            <span className="block w-full  rounded-full bg-white dark:bg-[#0f0f0f] py-3 text-center font-semibold transition-colors">
               {isPending ? (
                 <span className="flex items-center justify-center gap-2">
                   <Loader className="animate-spin h-5 w-5" /> Submitting...

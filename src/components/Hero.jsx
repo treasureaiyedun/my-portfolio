@@ -24,7 +24,7 @@ const Hero = ({ scrollToSection }) => {
           </h1>
 
           {/* Action Buttons */}
-          <div className="flex lg:flex-row md:flex-col flex-row gap-4">
+          <div className="flex lg:flex-row flex-col gap-4">
             <a href="https://drive.google.com/file/d/1eHIKjT6wMlWaMInWWtw46Q7NXd5RqW7w/view">
               <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 w-full py-3 rounded-full font-medium transition-all duration-200">
                 View my resume
