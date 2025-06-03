@@ -1,8 +1,7 @@
-import { NavLink } from "react-router-dom"
 import { ChevronRight } from "lucide-react"
 import HeroImg from "../assets/images/hero.jpg"
 
-const Hero = () => {
+const Hero = ({ scrollToSection }) => {
   return (
     <div className="min-h-screen">
 
@@ -25,14 +24,19 @@ const Hero = () => {
           </h1>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex lg:flex-row md:flex-col flex-row gap-4">
             <a href="https://drive.google.com/file/d/1eHIKjT6wMlWaMInWWtw46Q7NXd5RqW7w/view">
               <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 w-full py-3 rounded-full font-medium transition-all duration-200">
                 View my resume
               </button>
             </a>
             <div className="p-[1px] rounded-full bg-gradient-to-r from-purple-500 to-pink-500 inline-block">
-              <button className="bg-white hover:bg-gray-50 px-8 py-3 rounded-full font-medium transition-all duration-200 flex items-center justify-center group w-full ">
+
+              <button
+                onClick={() => {
+                  scrollToSection('contact');
+                }}
+                className="bg-white hover:bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-3 rounded-full font-medium transition-all duration-200 flex items-center justify-center group w-full hover:scale-110 dark:text-white dark:bg-[#0f0f0f] dark:hover:bg-gray-800">
                 Hire Me
                 <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -42,13 +46,10 @@ const Hero = () => {
         </div>
 
         {/* Profile Image Section */}
-        <div className="hidden lg:block relative  max-w-lg">
-          {/* Decorative Elements */}
-          {/* <div className="absolute top-10 left-10 w-16 h-16 bg-blue-500 rounded-full"></div>
-          <div className="absolute bottom-10 right-10 w-8 h-8 bg-red-500 rounded-full"></div> */}
+        <div className="hidden md:block relative  max-w-lg">
 
           {/* Profile Image */}
-          <div className="relative flex  w-96 h-96 mx-auto mt-">
+          <div className="relative flex md:w-80 md:h-80  w-96 h-96 mx-auto mt-">
             <div className="w-full h-full rounded-full overflow-hidden border-2 border-gradient-to-r from-purple-500 to-pink-500 p-1">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img

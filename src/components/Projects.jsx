@@ -28,7 +28,7 @@ const Projects = () => {
       description: "A UI that shows the tech-world!",
       tech: "ReactJS - TailwindCSS",
       demoUrl: "https://tech-world-chi.vercel.app/",
-      githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
+      githubUrl: "https://github.com/treasureaiyedun/tech-world"
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const Projects = () => {
       description: "A recreation of Microsoft's Lobe Tour website.",
       tech: "HTML - TailwindCSS",
       demoUrl: "#",
-      githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
+      githubUrl: "https://github.com/treasureaiyedun/lobe-tour"
     },
     {
       id: 4,
@@ -55,7 +55,7 @@ const Projects = () => {
       description: "A website for a car trading app.",
       tech: "ReactJS - TailwindCSS",
       demoUrl: "https://bumbu-app.vercel.app/",
-      githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
+      githubUrl: "https://github.com/treasureaiyedun/bumbu-app"
     }
   ]
 
@@ -90,9 +90,9 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="lg:h-screen flex flex-col justify-center border-b-[1px] border-gray-300 dark:border-gray-300"
+      className="lg:h-screen flex flex-col justify-center border-b-[1px] lg:mt-0 mt-10 border-gray-300 dark:border-gray-300"
     >
-      <div className="lg:my-24 text-2xl font-bold my-8 md:my-12">Featured Projects</div>
+      <div className="lg:my-24 text-2xl font-bold my-8 md:my-12 lg:px-0 px-6">Featured Projects</div>
 
       <div className="relative mx-auto" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
         {/* Left Arrow */}
@@ -114,7 +114,7 @@ const Projects = () => {
         </button>
 
         {/* Projects Display */}
-        <div className="flex flex-col md:flex-row justify-between md:space-x-6 items-center">
+        <div className="flex flex-col px-6 md:flex-row justify-between md:space-x-6 items-center">
           {visibleProjects().map((project, idx) => (
             <div
               key={project.id}
@@ -123,7 +123,7 @@ const Projects = () => {
                 hover:scale-100 hover:z-20 hover:opacity-100`}
             >
               <img src={project.image} alt={project.title} className="w-full h-auto rounded-lg shadow-lg" loading="lazy" />
-              <h1 className="uppercase font-medium mt-2 pl-6">{project.title}</h1>
+              <h1 className="uppercase font-medium mt-2 ">{project.title}</h1>
               <p className="mt-3 md:mt-2">{project.description}</p>
               <p className="text-xs text-blue-500 mt-4">{project.tech}</p>
               <div className="flex justify-between">
@@ -144,7 +144,7 @@ const Projects = () => {
         </div>
 
         {/* Indicators */}
-        <div className="flex justify-center mt-6 space-x-2">
+        <div className="flex justify-center mt-6 space-x-2 mb-5">
           {projects.map((_, index) => (
             <button
               key={index}

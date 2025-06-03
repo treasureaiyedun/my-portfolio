@@ -1,160 +1,158 @@
-import React, { useState } from 'react'
-import { RiLinkedinBoxFill, RiGithubFill } from '@remixicon/react'
-import { useContext } from 'react'
-import { Loader } from 'lucide-react'
-// import Navbar from '../components/Navbar'
+import React, { useState } from "react";
+import { RiLinkedinBoxFill, RiGithubFill } from "@remixicon/react";
+import { Loader } from "lucide-react";
 
-const ContactMe = () => {
-
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [subject, setSubject] = useState("")
-  const [message, setMessage] = useState("")
+export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [isPending, setIsPending] = useState(false);
 
+  // universal onChange for all inputs
   const handleChange = (e) => {
-    setName(e.target.value)
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsPending(true);
 
-  const handleSubjectChange = (e) => {
-    setSubject(e.target.value)
-  }
+    try {
+      // ⚠️ artificial delay for UX demo
+      await new Promise((r) => setTimeout(r, 1500));
 
-  const handleMessageChange = (e) => {
-    setMessage(e.target.value)
-  }
+      const res = await fetch("http://localhost:5000/contacts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error(res.statusText);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const contact = { name, email, subject, message };
-
-  setIsPending(true);
-
-  try {
-    // Artificial delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    const response = await fetch("http://localhost:5000/contacts", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify(contact)
-    });
-
-    if (!response.ok) {
-      throw new Error(`Error: ${response.statusText}`);
+      // reset + toast
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      alert("Message submitted successfully!");
+    } catch (err) {
+      console.error(err);
+      alert("There was an error submitting the form. Please try again.");
+    } finally {
+      setIsPending(false);
     }
+  };
 
-    const data = await response.json();
-    console.log(data);
-
-    setName("");
-    setEmail("");
-    setSubject("");
-    setMessage("");
-
-    alert("Message submitted successfully!");
-
-  } catch (error) {
-    console.error(error);
-    alert("There was an error submitting the form. Please try again.");
-  } finally {
-    setIsPending(false);
-  }
-};
-
-
-
-return (
-  <>
-    <div className="w-full flex lg:flex-col items-center justify-center min-h-screen" id="contact">
-      <div className="w-full flex flex-col lg:flex-row">
-        <div className="lg:w-1/2">
-          <h1 className="text-4xl font-bold mt-10">Contact Me</h1>
-          <p className="mt-4">Feel free to reach out to me at <a className="relative" href="mailto:treasureaiyedun01@gmail.com"> <span>treasureaiyedun01@gmail.com</span>
-            <span className="absolute left-1 right-1 bottom-0 h-[1px] bg-[#4a7ac8]"></span>
-          </a></p>
-          <h1 className="font-light">For more info, here's my<button className="relative px-2 inline-block">
-            <a href="https://drive.google.com/file/d/1jmP4XLOJiiNSZVDYzASLGZx3mXc2Vj81/view"><span className="">resume</span></a>
-            <span className="absolute left-1 right-1 bottom-0 h-[1px] bg-[#804AC8]"></span>
-          </button>
-          </h1>
-          <div className="flex space-x-3 w-full mt-3">
-            <a href="https://github.com/treasureaiyedun/"><RiGithubFill /></a>
-            <a href="https://www.linkedin.com/in/treasureaiyedun"><RiLinkedinBoxFill /></a>
+  return (
+    <section
+      id="contact"
+      className="min-h-screen w-full py-20 px-6 lg:px-20 text-black dark:text-white"
+    >
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* Left column */}
+        <div>
+          <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
+          <p className="text-lg mb-4">
+            Feel free to reach out to me at {" "}
+            <a
+              href="mailto:treasureaiyedun01@gmail.com"
+              className="text-pink-400 underline"
+            >
+              treasureaiyedun01@gmail.com
+            </a>
+          </p>
+          <p className="mb-8">
+            For more info, here's my {" "}
+            <a
+              href="https://drive.google.com/file/d/1eHIKjT6wMlWaMInWWtw46Q7NXd5RqW7w/view"
+              className="text-pink-400 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              resume
+            </a>
+            .
+          </p>
+          <div className="flex gap-4 text-2xl">
+            <a
+              href="https://github.com/treasureaiyedun"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-400 transition-colors"
+            >
+              <RiGithubFill />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/treasureaiyedun"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-400 transition-colors"
+            >
+              <RiLinkedinBoxFill />
+            </a>
           </div>
         </div>
 
-
+        {/* Right column (form) */}
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-4 w-full lg:w-1/2 mt-10 p-5 lg:mt-0">
-          <label htmlFor="name" className="text-lg font-semibold">Name</label>
-          <input
-            type="text"
-            autoComplete="off"
-            id="name"
-            name="name"
-            value={name}
-            onChange={handleChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-[#4a7ac8]" />
+          className=" px-6 rounded-lg shadow-lg space-y-4"
+        >
+          {[
+            { label: "Name", id: "name", type: "text" },
+            { label: "Email", id: "email", type: "email" },
+            { label: "Subject", id: "subject", type: "text" },
+          ].map(({ label, id, type }) => (
+            <div key={id}>
+              <label htmlFor={id} className="block mb-1 font-medium">
+                {label}
+              </label>
+              <input
+                id={id}
+                name={id}
+                type={type}
+                value={formData[id]}
+                onChange={handleChange}
+                autoComplete="off"
+                className="w-full px-4 py-2 rounded dark:bg-[#0f0f0f]  border border-gray-700 focus:border-pink-500 focus:outline-none"
+              />
+            </div>
+          ))}
 
-          <label
-            htmlFor="email"
-            className="text-lg font-semibold">Email</label>
-          <input
-            type="email"
-            autoComplete="off"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-[#4a7ac8]" />
+          {/* message textarea */}
+          <div>
+            <label htmlFor="message" className="block mb-1 font-medium">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded resize-none dark:bg-[#0f0f0f] border border-gray-700 focus:border-pink-500 focus:outline-none"
+            />
+          </div>
 
-          <label
-            htmlFor="subject"
-            className="text-lg font-semibold">Subject</label>
-          <input
-            type="text"
-            autoComplete="off"
-            id="subject"
-            name="subject"
-            value={subject}
-            onChange={handleSubjectChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-[#4a7ac8]" />
-
-          <label
-            htmlFor="message"
-            className="text-lg font-semibold">Message</label>
-          <textarea id="message"
-            name="message"
-            value={message}
-            onChange={handleMessageChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 resize-none focus:outline-none focus:border-[#4a7ac8]">
-          </textarea>
-
+          {/* submit button with gradient */}
           <button
-            className="bg-[#2b2626] text-white text-center w-32 py-3 rounded-lg font-semibold hover:bg-black transition-colors duration-300">
-            {/* Submit */}
-            {isPending ? (
-              <span className="flex items-center gap-2">
-                <Loader /> Submitting...
-              </span>
-            ) : (
-              "Submit"
-            )}
-
+            disabled={isPending}
+            className="w-full md:w-40 relative p-[1px] rounded-full focus:outline-none disabled:opacity-60 bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-110"
+          >
+            <span className="block w-full rounded-full bg-white dark:bg-[#0f0f0f] py-3 text-center font-semibold transition-colors">
+              {isPending ? (
+                <span className="flex items-center justify-center gap-2">
+                  <Loader className="animate-spin h-5 w-5" /> Submitting...
+                </span>
+              ) : (
+                "Submit"
+              )}
+            </span>
           </button>
-
         </form>
       </div>
-    </div>
-  </>
 
-)
+      
+    </section>
+  );
 }
-
-export default ContactMe

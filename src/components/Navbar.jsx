@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import ThemeController from './ThemeToggle';
 
@@ -14,7 +13,7 @@ const Navbar = ({ scrollToSection }) => {
     <ul className={`lg:flex lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:p-0 lg:space-y-0 lg:space-x-4 lg:flex-row
       ${isOpen ? 'fixed' : 'hidden'} 
       top-0 left-0 w-full h-screen 
-      bg-white dark:bg-gray-900
+      bg-white dark:bg-[#0f0f0f]
       flex flex-col items-center justify-center 
       space-y-8 z-50`}>
       <li>
@@ -39,16 +38,7 @@ const Navbar = ({ scrollToSection }) => {
           Projects
         </button>
       </li>
-      <li>
-        <a
-          href="https://drive.google.com/file/d/1jmP4XLOJiiNSZVDYzASLGZx3mXc2Vj81/view"
-          className="hover:text-blue-500 transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Resume
-        </a>
-      </li>
+
       <li>
         <button
           onClick={() => {
@@ -66,7 +56,7 @@ const Navbar = ({ scrollToSection }) => {
 
   return (
     <nav className="relative z-50">
-      <div className="flex justify-between items-center px-3 my-5 py-2 mx-10 rounded-full  shadow-lg">
+      <div className="flex justify-between items-center px-3 my-5 py-2 mx-24 rounded-full shadow-lg dark:shadow-slate-800">
         <div className="font-bold text-xl z-50">TA.</div>
         <NavLinks />
         <button

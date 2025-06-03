@@ -6,8 +6,7 @@ import js from "../assets/images/js.png";
 import react from "../assets/images/react.png";
 import tailwind from "../assets/images/tailwindcss.png";
 import next from "../assets/images/next.png";
-import git from "../assets/images/git.png";
-import github from "../assets/images/github.png";
+import typescript from "../assets/images/typescript.png";
 
 const AboutMe = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -19,8 +18,7 @@ const AboutMe = () => {
     { image: react, name: "ReactJS" },
     { image: tailwind, name: "Tailwind CSS" },
     { image: next, name: "Next.js" },
-    { image: git, name: "Git" },
-    { image: github, name: "Github" },
+    { image: typescript, name: "TypeScript" },
   ];
 
   return (
@@ -44,7 +42,7 @@ const AboutMe = () => {
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="rounded-xl bg-white dark:bg-[#1a1a23] cursor-pointer mx-6 w-20 h-20 flex flex-col items-center justify-center group hover:scale-110 transition-transform"
+              className="rounded-xl bg-gray-50 dark:bg-[#1a1a23] cursor-pointer mx-6 w-24 h-24 flex flex-col items-center justify-center group hover:scale-110 transition-transform"
             >
               <img src={tech.image} alt={tech.name} className="w-20 h-12 object-contain" />
               <p className="mt-2 text-sm text-center font-medium">{tech.name}</p>
