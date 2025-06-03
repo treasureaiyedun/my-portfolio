@@ -11,7 +11,6 @@ export default function ContactSection() {
   });
   const [isPending, setIsPending] = useState(false);
 
-  // universal onChange for all inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -22,17 +21,19 @@ export default function ContactSection() {
     setIsPending(true);
 
     try {
-      // ⚠️ artificial delay for UX demo
       await new Promise((r) => setTimeout(r, 1500));
 
-      const res = await fetch("http://localhost:5000/contacts", {
+      const res = await fetch("https://formsubmit.co/ajax/treasureaiyedun01@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify(formData),
       });
+
       if (!res.ok) throw new Error(res.statusText);
 
-      // reset + toast
       setFormData({ name: "", email: "", subject: "", message: "" });
       alert("Message submitted successfully!");
     } catch (err) {
@@ -49,7 +50,6 @@ export default function ContactSection() {
       className="min-h-screen w-full py-20 lg:px-20 text-black dark:text-white"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center md:items-start">
-        {/* Left column */}
         <div className="px-6 md:px-0">
           <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
           <p className="text-lg mb-4">
@@ -93,16 +93,11 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Right column (form) */}
         <form
           onSubmit={handleSubmit}
           className=" px-6 rounded-lg space-y-4"
         >
-          {[
-            { label: "Name", id: "name", type: "text" },
-            { label: "Email", id: "email", type: "email" },
-            { label: "Subject", id: "subject", type: "text" },
-          ].map(({ label, id, type }) => (
+          {[{ label: "Name", id: "name", type: "text" }, { label: "Email", id: "email", type: "email" }, { label: "Subject", id: "subject", type: "text" }].map(({ label, id, type }) => (
             <div key={id}>
               <label htmlFor={id} className="block mb-1 font-medium">
                 {label}
@@ -114,12 +109,12 @@ export default function ContactSection() {
                 value={formData[id]}
                 onChange={handleChange}
                 autoComplete="off"
-                className="w-full px-4 py-2 rounded dark:bg-[#0f0f0f]  border border-gray-700 focus:border-pink-500 focus:outline-none"
+                required
+                className="w-full px-4 py-2 rounded dark:bg-[#0f0f0f] border border-gray-700 focus:border-pink-500 focus:outline-none"
               />
             </div>
           ))}
 
-          {/* message textarea */}
           <div>
             <label htmlFor="message" className="block mb-1 font-medium">
               Message
@@ -130,16 +125,16 @@ export default function ContactSection() {
               rows={4}
               value={formData.message}
               onChange={handleChange}
+              required
               className="w-full px-4 py-2 rounded resize-none dark:bg-[#0f0f0f] border border-gray-700 focus:border-pink-500 focus:outline-none"
             />
           </div>
 
-          {/* submit button with gradient */}
           <button
             disabled={isPending}
             className="w-full md:w-40 relative p-[1px] rounded-full focus:outline-none disabled:opacity-60 bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-110"
           >
-            <span className="block w-full  rounded-full bg-white dark:bg-[#0f0f0f] py-3 text-center font-semibold transition-colors">
+            <span className="block w-full rounded-full bg-white dark:bg-[#0f0f0f] py-3 text-center font-semibold transition-colors">
               {isPending ? (
                 <span className="flex items-center justify-center gap-2">
                   <Loader className="animate-spin h-5 w-5" /> Submitting...
@@ -151,8 +146,6 @@ export default function ContactSection() {
           </button>
         </form>
       </div>
-
-      
     </section>
   );
 }
