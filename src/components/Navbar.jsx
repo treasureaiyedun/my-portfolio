@@ -66,7 +66,7 @@ const Navbar = ({ scrollToSection }) => {
 
   return (
     <nav className="relative z-50">
-      <div className="flex justify-between items-center my-5 mx-20 border-black border-[1px]">
+      <div className="flex justify-between items-center px-3 my-5 py-2 mx-10 rounded-full  shadow-lg">
         <div className="font-bold text-xl z-50">TA.</div>
         <NavLinks />
         <button

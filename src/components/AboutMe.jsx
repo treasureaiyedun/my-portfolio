@@ -46,7 +46,7 @@ const AboutMe = () => {
               key={index}
               className="rounded-xl bg-white dark:bg-[#1a1a23] cursor-pointer mx-6 w-20 h-20 flex flex-col items-center justify-center group hover:scale-110 transition-transform"
             >
-              <img src={tech.image} alt={tech.name} className="w-10 h-10 object-contain" />
+              <img src={tech.image} alt={tech.name} className="w-20 h-12 object-contain" />
               <p className="mt-2 text-sm text-center font-medium">{tech.name}</p>
             </div>
           ))}
