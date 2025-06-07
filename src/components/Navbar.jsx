@@ -4,7 +4,7 @@ import ThemeController from './ThemeToggle';
 
 const Navbar = ({ scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const navRef = useRef(null); 
+  const navRef = useRef(null);
 
   const toggleNavbar = () => setIsOpen(!isOpen);
 
@@ -81,7 +81,13 @@ const Navbar = ({ scrollToSection }) => {
                 </button>
               </li>
               <li>
-                <ThemeController />
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}>
+                  <ThemeController />
+                </button>
+
               </li>
             </ul>
           )}
