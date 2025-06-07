@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <ThemeProvider>
-      <div className="w-full flex justify-center max-w-7xl text-black dark:text-white bg-white dark:bg-[#0f0f0f]">
+      <div className="w-full flex justify-center text-black dark:text-white bg-white dark:bg-[#0f0f0f]">
         <div className="w-[90%]">
           <Navbar scrollToSection={scrollToSection} />
           <div ref={sectionRefs.home}>
