@@ -39,15 +39,15 @@ const Projects = () => {
       demoUrl: "#",
       githubUrl: "https://github.com/treasureaiyedun/lobe-tour"
     },
-    {
-      id: 4,
-      image: ExpressVPN,
-      title: "Express VPN",
-      description: "A modern VPN service landing page design.",
-      tech: "ReactJS - CSS",
-      demoUrl: "#",
-      githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
-    },
+    // {
+    //   id: 4,
+    //   image: ExpressVPN,
+    //   title: "Express VPN",
+    //   description: "A modern VPN service landing page design.",
+    //   tech: "ReactJS - CSS",
+    //   demoUrl: "#",
+    //   githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
+    // },
     {
       id: 5,
       image: Bumbu,
