@@ -35,7 +35,7 @@ const Navbar = ({ scrollToSection }) => {
 
         <div className="flex-1 flex items-center justify-between">
           {isOpen && (
-            <ul className="flex pl-4 items-center space-x-4 2xl:space-x-6 text-xs md:text-sm font-medium 2xl:text-2xl">
+            <ul className="flex pl-4 items-center space-x-2 md:space-x-4 2xl:space-x-6 text-xs md:text-sm font-medium 2xl:text-2xl">
               <li>
                 <button
                   onClick={() => {
