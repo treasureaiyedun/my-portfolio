@@ -22,16 +22,16 @@ const AboutMe = () => {
   ];
 
   return (
-    <div className="leading-relaxed min-h-[80vh] lg:pt-10 border-t-[1px] border-black dark:border-gray-300" id="about">
-      <h1 className="text-center text-2xl font-medium pt-10">About Me</h1>
-      <p className="mb-20 md:text-center text-justify px-4">
-        I am a frontend developer with a passion for creating engaging and user-friendly web experiences. 
+    <div className="leading-relaxed min-h-[60vh] 2xl:h-screen lg:pt-24 2xl:pt-28 " id="about">
+      <h1 className="text-center text-2xl 2xl:text-4xl font-bold pt-10 border-t-[1px] border-black dark:border-gray-300 lg:pt-20 2xl:pt-20">About Me</h1>
+      <p className="mb-20 md:text-center text-justify px-4 2xl:mt-4 2xl:text-3xl">
+        I am a frontend engineer with a passion for creating engaging and user-friendly web experiences. 
         With over two years of experience, I am enthusiastic about collaborating with teams to bring 
         creative designs to life and contribute to building intuitive interfaces for users. 
         I am eager to learn and grow in the dynamic world of web development.
       </p>
 
-      <h1 className="text-center text-2xl font-medium py-10">My Tech Stack</h1>
+      <h1 className="text-center text-2xl font-bold py-10 2xl:text-4xl 2xl:pt-40">My Tech Stack</h1>
 
       <div
         className="w-full overflow-hidden"
@@ -42,10 +42,10 @@ const AboutMe = () => {
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="rounded-xl bg-gray-50 dark:bg-[#1a1a23] cursor-pointer mx-6 w-24 h-24 flex flex-col items-center justify-center group hover:scale-110 transition-transform"
+              className="rounded-xl bg-gray-50 dark:bg-[#1a1a23] cursor-pointer mx-6 w-24 h-24 2xl:w-40 2xl:h-40 flex flex-col items-center justify-center group hover:scale-110 transition-transform"
             >
-              <img src={tech.image} alt={tech.name} className="w-20 h-12 object-contain" />
-              <p className="mt-2 text-sm text-center font-medium">{tech.name}</p>
+              <img src={tech.image} alt={tech.name} className="w-20 h-12 2xl:h-24 2xl:w-24 object-contain" />
+              <p className="mt-2 text-sm text-center font-medium 2xl:text-xl">{tech.name}</p>
             </div>
           ))}
         </Ticker>

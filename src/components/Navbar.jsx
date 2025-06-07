@@ -22,7 +22,7 @@ const Navbar = ({ scrollToSection }) => {
             scrollToSection('about');
             setIsOpen(false);
           }}
-          className="hover:text-blue-500 transition-colors"
+          className="hover:scale-110 transition-transform"
         >
           About Me
         </button>
@@ -33,7 +33,7 @@ const Navbar = ({ scrollToSection }) => {
             scrollToSection('projects');
             setIsOpen(false);
           }}
-          className="hover:text-blue-500 transition-colors"
+          className="hover:scale-110 transition-transform"
         >
           Projects
         </button>
@@ -45,7 +45,7 @@ const Navbar = ({ scrollToSection }) => {
             scrollToSection('contact');
             setIsOpen(false);
           }}
-          className="hover:text-blue-500 transition-colors"
+          className="hover:scale-110 transition-transform"
         >
           Contact
         </button>
