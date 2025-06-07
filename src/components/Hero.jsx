@@ -44,7 +44,7 @@ const Hero = ({ scrollToSection }) => {
         </div>
 
         {/* Right Section (Image) */}
-        <div className="flex-1 flex justify-end">
+        <div className="flex-1 md:flex justify-end hidden">
           <div className="relative w-72 h-72 md:w-80 md:h-80 2xl:w-[36rem] 2xl:h-[36rem]">
             <div className="w-full h-full rounded-full overflow-hidden border-2 border-gradient-to-r from-purple-500 to-pink-500 p-1">
               <div className="w-full h-full rounded-full overflow-hidden">
