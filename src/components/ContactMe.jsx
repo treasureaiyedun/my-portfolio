@@ -135,7 +135,7 @@ export default function ContactSection() {
 
           <button
             disabled={isPending}
-            className="w-full md:w-40 relative p-[1px] rounded-full focus:outline-none disabled:opacity-60 bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-110"
+            className="w-full md:w-40 relative p-[1px] rounded-full focus:outline-none disabled:opacity-60 bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-110 transition-transform"
           >
             <span className="block w-full rounded-full bg-white dark:bg-[#0f0f0f] py-3 text-center font-semibold transition-colors 2xl:text-3xl">
               {isPending ? (

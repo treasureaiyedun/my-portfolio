@@ -25,7 +25,7 @@ const AboutMe = () => {
     <div className="leading-relaxed min-h-[60vh] 2xl:h-screen lg:pt-24 2xl:pt-28 " id="about">
       <h1 className="text-center text-2xl 2xl:text-4xl font-bold pt-10 border-t-[1px] border-black dark:border-gray-300 lg:pt-20 2xl:pt-20">About Me</h1>
       <p className="mb-20 md:text-center text-justify px-4 2xl:mt-4 2xl:text-3xl">
-        I am a frontend engineer with a passion for creating engaging and user-friendly web experiences. 
+        Hi! I'm Treasure, a frontend engineer with a passion for creating engaging and user-friendly web experiences. 
         With over two years of experience, I am enthusiastic about collaborating with teams to bring 
         creative designs to life and contribute to building intuitive interfaces for users. 
         I am eager to learn and grow in the dynamic world of web development.

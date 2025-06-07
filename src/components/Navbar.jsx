@@ -28,7 +28,7 @@ const Navbar = ({ scrollToSection }) => {
     >
       <div
         className={`flex items-center px-4 py-2 shadow-xl shadow-slate-300 rounded-full transition-all duration-300 dark:shadow-gray-900 dark:shadow-lg animate-bounce 2xl:py-4
-          ${isOpen ? 'w-[380px] md:w-[420px] 2xl:w-[630px] bg-white dark:bg-[#0f0f0f]' : 'w-[180px] bg-white dark:bg-[#0f0f0f]'}
+          ${isOpen ? 'w-[400px] md:w-[420px] 2xl:w-[630px] bg-white dark:bg-[#0f0f0f]' : 'w-[180px] bg-white dark:bg-[#0f0f0f]'}
         `}
       >
         <div className="font-bold text-xl mr-3 2xl:text-2xl">TA.</div>
