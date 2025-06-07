@@ -1,23 +1,26 @@
-// components/ThemeToggle.js
-import { useTheme } from '../contexts/ThemeContext';
-import { Moon, Sun } from 'lucide-react';
+import { useTheme } from "../contexts/ThemeContext"
+import { Moon, Sun } from "lucide-react"
 
 const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme()
+
+  const handleToggle = () => {
+    setTheme(resolvedTheme === "light" ? "dark" : "light")
+  }
 
   return (
     <button
-      onClick={toggleTheme}
-      className="p-1 rounded-lg "
-      aria-label={`Toggle ${theme === 'light' ? 'dark' : 'light'} mode`}
+      onClick={handleToggle}
+      className="p-1 rounded-lg"
+      aria-label={`Toggle ${resolvedTheme === "light" ? "dark" : "light"} mode`}
     >
-      {theme === 'light' ? (
-        <Moon className="text-gray-800 2xl:w-8 2xl:h-8"/>
+      {resolvedTheme === "light" ? (
+        <Moon className="text-gray-800 2xl:w-8 2xl:h-8" />
       ) : (
-        <Sun className=""/>
+        <Sun className="2xl:w-8 2xl:h-8" />
       )}
     </button>
-  );
-};
+  )
+}
 
-export default ThemeToggle;
+export default ThemeToggle
