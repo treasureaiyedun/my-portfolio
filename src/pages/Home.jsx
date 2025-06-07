@@ -12,6 +12,7 @@ import AboutMe from '../components/AboutMe'
 
 const Home = () => {
   const sectionRefs = {
+    home: useRef(null),
     about: useRef(null),
     projects: useRef(null),
     contact: useRef(null),
@@ -23,11 +24,13 @@ const Home = () => {
 
   return (
     <ThemeProvider>
-      <div className="w-full flex justify-center min-h-screen text-black dark:text-white bg-white dark:bg-[#0f0f0f]">
+      <div className="w-full flex justify-center text-black dark:text-white bg-white dark:bg-[#0f0f0f]">
         <div className="w-[90%]">
           <Navbar scrollToSection={scrollToSection} />
+          <div ref={sectionRefs.home}>
           <Hero scrollToSection={scrollToSection} />
-          <div id="about" ref={sectionRefs.about}>
+          </div>
+          <div ref={sectionRefs.about}>
             <AboutMe />
           </div>
           <div ref={sectionRefs.projects}>

@@ -12,7 +12,7 @@ const ThemeToggle = () => {
       aria-label={`Toggle ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
       {theme === 'light' ? (
-        <Moon className="text-gray-800"/>
+        <Moon className="text-gray-800 2xl:w-8 2xl:h-8"/>
       ) : (
         <Sun className=""/>
       )}
