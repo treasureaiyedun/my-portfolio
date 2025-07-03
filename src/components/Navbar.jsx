@@ -24,18 +24,18 @@ const Navbar = ({ scrollToSection }) => {
   return (
     <nav
       ref={navRef}
-      className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 mt-3 2xl:mt-10"
+      className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 mt-10"
     >
       <div
-        className={`flex items-center px-4 py-2 shadow-xl shadow-slate-300 rounded-full transition-all duration-300 dark:shadow-gray-900 dark:shadow-lg animate-bounce 2xl:py-4
-          ${isOpen ? 'w-[400px] md:w-[420px] 2xl:w-[630px] bg-white dark:bg-[#0f0f0f]' : 'w-[180px] bg-white dark:bg-[#0f0f0f]'}
+        className={`flex items-center p-2 shadow-xl shadow-slate-300 rounded-full transition-all duration-300 dark:shadow-gray-900 dark:shadow-lg animate-bounce
+          ${isOpen ? 'w-[400px] md:w-[420px] bg-white dark:bg-[#0f0f0f]' : 'w-[220px] bg-white dark:bg-[#0f0f0f]'}
         `}
       >
-        <div className="font-bold text-xl mr-3 2xl:text-2xl">TA.</div>
+        <div className="font-bold text-xl mr-3">TA.</div>
 
         <div className="flex-1 flex items-center justify-between">
           {isOpen && (
-            <ul className="flex pl-1 md:pl-3 items-center space-x-3 md:space-x-4 2xl:space-x-6 text-sm font-medium 2xl:text-2xl">
+            <ul className="flex pl-1 md:pl-3 items-center space-x-3 md:space-x-4 text-sm font-medium">
               <li>
                 <button
                   onClick={() => {
@@ -99,7 +99,7 @@ const Navbar = ({ scrollToSection }) => {
           aria-label="Toggle menu"
         >
           {isOpen ? (
-            <X className="w-5 h-5 2xl:w-8 2xl:h-8 outline-none" />
+            <X className="w-5 h-5 outline-none" />
           ) : (
             <Menu size={20} className="outline-none" />
           )}

@@ -8,7 +8,12 @@ export default {
     darkMode: "class",
 
   theme: {
-    extend: {},
+    extend: {
+       fontFamily: {
+        instrumentSans: ["Instrument Sans", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 }

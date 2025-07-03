@@ -22,16 +22,16 @@ const AboutMe = () => {
   ];
 
   return (
-    <div className="leading-relaxed min-h-[60vh] 2xl:h-screen lg:pt-24 2xl:pt-28 " id="about">
-      <h1 className="text-center text-2xl 2xl:text-4xl font-bold pt-10 border-t-[1px] border-black dark:border-gray-300 lg:pt-20 2xl:pt-20">About Me</h1>
-      <p className="mb-20 md:text-center text-justify px-4 2xl:mt-4 2xl:text-3xl">
-        Hi! I'm Treasure, a frontend engineer with a passion for creating engaging and user-friendly web experiences. 
-        With over two years of experience, I am enthusiastic about collaborating with teams to bring 
-        creative designs to life and contribute to building intuitive interfaces for users. 
-        I am eager to learn and grow in the dynamic world of web development.
+    <div className="max-w-7xl mx-auto">
+      <div className="leading-relaxed min-h-[60vh] lg:pt-24" id="about">
+      <h1 className="text-center text-2xl font-bold pt-10 border-t-[1px] border-black dark:border-gray-300 lg:pt-20">About Me</h1>
+      <p className="mb-20 md:text-center text-justify px-4">
+        Hi! I'm Treasure, a frontend engineer with a passion for creating engaging and user-friendly web experiences. I have a Bachelor's degree in Software Engineering from Babcock University, Ogun state, Nigeria. I am enthusiastic about bringing
+        creative designs to life and building intuitive interfaces for users.
+        I have been doing this for over two years now, and with that, I can boldy say that I love writing clean code and building not just functional but elegant websites as well. When I'm not coding, you can find me reading a psychological thriller book or watching a good movie. Be it individually or in a team, I am always eager to do more - learn new technologies, build cool stuff and improve myself generally.
       </p>
 
-      <h1 className="text-center text-2xl font-bold py-10 2xl:text-4xl 2xl:pt-40">My Tech Stack</h1>
+      <h1 className="text-center text-2xl font-bold py-10">My Tech Stack</h1>
 
       <div
         className="w-full overflow-hidden"
@@ -42,15 +42,17 @@ const AboutMe = () => {
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="rounded-xl bg-gray-50 dark:bg-[#1a1a23] cursor-pointer mx-6 w-24 h-24 2xl:w-40 2xl:h-40 flex flex-col items-center justify-center group hover:scale-110 transition-transform"
+              className="rounded-xl bg-gray-50 dark:bg-[#1a1a23] cursor-pointer mx-6 w-24 h-24 flex flex-col items-center justify-center group hover:scale-110 transition-transform"
             >
-              <img src={tech.image} alt={tech.name} className="w-20 h-12 2xl:h-24 2xl:w-24 object-contain" />
-              <p className="mt-2 text-sm text-center font-medium 2xl:text-xl">{tech.name}</p>
+              <img src={tech.image} alt={tech.name} className="w-20 h-12 object-contain" />
+              <p className="mt-2 text-sm text-center font-medium">{tech.name}</p>
             </div>
           ))}
         </Ticker>
       </div>
     </div>
+    </div>
+    
   );
 };
 

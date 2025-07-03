@@ -88,29 +88,28 @@ const Projects = () => {
   }
 
   return (
-    <div
+    <div className="w-full max-w-7xl mx-auto">
+      <div
       id="projects"
-      className="lg:h-screen flex flex-col justify-center 2xl:mb-40 md:mt-0 mt-10 border-b-[1px] border-black dark:border-gray-300"
+      className="lg:h-screen flex flex-col justify-center md:mt-0 mt-10 border-b-[1px] border-black dark:border-gray-300"
     >
-      <div className="lg:mb-24 text-2xl text-center md:text-left font-bold mb-8 mt-10 md:mt-0 lg:mt-4 md:mb-12 lg:px-0 px-6 2xl:text-4xl">Featured Projects</div>
+      <div className="lg:mb-24 text-2xl text-center md:text-left font-bold mb-8 mt-10 md:mt-0 lg:mt-4 md:mb-12 lg:px-0 px-6">Featured Projects</div>
 
       <div className="relative mx-auto" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
-        {/* Left Arrow */}
         <button
           onClick={goToPrevious}
           className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center"
           aria-label="Previous project"
         >
-          <ChevronLeft className="h-6 w-6 2xl:h-10 2xl:w-10" />
+          <ChevronLeft className="h-6 w-6" />
         </button>
 
-        {/* Right Arrow */}
         <button
           onClick={goToNext}
           className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center"
           aria-label="Next project"
         >
-          <ChevronRight className="h-6 w-6 2xl:h-10 2xl:w-10" />
+          <ChevronRight className="h-6 w-6" />
         </button>
 
         {/* Projects Display */}
@@ -123,19 +122,19 @@ const Projects = () => {
                 hover:scale-100 hover:z-20 hover:opacity-100`}
             >
               <img src={project.image} alt={project.title} className="w-full h-auto rounded-lg shadow-lg" loading="lazy" />
-              <h1 className="uppercase font-medium mt-2 2xl:text-3xl">{project.title}</h1>
-              <p className="mt-3 md:mt-2 2xl:text-xl">{project.description}</p>
-              <p className="text-xs text-blue-500 mt-4 2xl:text-lg">{project.tech}</p>
+              <h1 className="uppercase font-medium mt-2">{project.title}</h1>
+              <p className="mt-3 md:mt-2">{project.description}</p>
+              <p className="text-xs text-blue-500 mt-4">{project.tech}</p>
               <div className="flex justify-between">
                 <div>
                   <a href={project.demoUrl} className="flex mt-4 hover:text-blue-500">
                     <Link />
-                    <p className="ml-2 2xl:text-lg">Live Demo</p>
+                    <p className="ml-2">Live Demo</p>
                   </a>
                 </div>
                 <div>
                   <a href={project.githubUrl} className="flex mt-4 ml-4 hover:text-blue-500">
-                    <RiGithubFill className="text-xl 2xl:text-3xl"/>
+                    <RiGithubFill className="text-xl"/>
                   </a>
                 </div>
               </div>
@@ -158,6 +157,8 @@ const Projects = () => {
         </div> */}
       </div>
     </div>
+    </div>
+    
   )
 }
 

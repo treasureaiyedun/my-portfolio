@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="flex justify-center py-5 2xl:text-3xl">&copy; Treasure Aiyedun, 2025.</div>
+    <div className="flex justify-center py-5 max-w-7xl mx-auto">&copy; Treasure Aiyedun, 2025.</div>
   )
 }
 
