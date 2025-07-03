@@ -28,7 +28,7 @@ const AboutMe = () => {
       <p className="mb-20 md:text-center text-justify px-4">
         Hi! I'm Treasure, a frontend engineer with a passion for creating engaging and user-friendly web experiences. I have a Bachelor's degree in Software Engineering from Babcock University, Ogun state, Nigeria. I am enthusiastic about bringing
         creative designs to life and building intuitive interfaces for users.
-        I have been doing this for over two years now, and with that, I can boldy say that I love writing clean code and building not just functional but elegant websites as well. When I'm not coding, you can find me reading a psychological thriller book or watching a good movie. Be it individually or in a team, I am always eager to do more - learn new technologies, build cool stuff and improve myself generally.
+        I have been doing this for over two years now, and with that, I can boldy say that I love writing clean code and building not just functional but elegant websites as well. Be it individually or in a team, I am always eager to do more - learn new technologies, build cool stuff and improve myself generally.
       </p>
 
       <h1 className="text-center text-2xl font-bold py-10">My Tech Stack</h1>
