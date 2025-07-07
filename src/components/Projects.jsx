@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import AtomicLite from "../assets/images/Atomic-Lite.png"
-import ExpressVPN from "../assets/images/Express-VPN.png"
+import Bumbu from "../assets/images/Bumbu.png"
 import LobeTour from "../assets/images/Lobe-tour.png"
 import TechWorld from "../assets/images/Tech-World.png"
-import Bumbu from "../assets/images/Bumbu.png"
+import SplitPay from "../assets/images/Split-Pay.png"
 import { Link, ChevronLeft, ChevronRight } from "lucide-react"
 import { RiGithubFill } from "@remixicon/react"
 
@@ -39,15 +39,15 @@ const Projects = () => {
       demoUrl: "#",
       githubUrl: "https://github.com/treasureaiyedun/lobe-tour"
     },
-    // {
-    //   id: 4,
-    //   image: ExpressVPN,
-    //   title: "Express VPN",
-    //   description: "A modern VPN service landing page design.",
-    //   tech: "ReactJS - CSS",
-    //   demoUrl: "#",
-    //   githubUrl: "https://github.com/treasureaiyedun/atomic-lite"
-    // },
+    {
+      id: 4,
+      image: SplitPay,
+      title: "SplitPay",
+      description: "An application that enables users to split bills equally across different currencies!",
+      tech: "NextJS - TypeScript - TailwindCSS",
+      demoUrl: "https://split-pay-two.vercel.app/",
+      githubUrl: "https://github.com/treasureaiyedun/split-pay"
+    },
     {
       id: 5,
       image: Bumbu,
