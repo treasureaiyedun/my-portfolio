@@ -4,6 +4,7 @@ import Bumbu from "../assets/images/Bumbu.png"
 import LobeTour from "../assets/images/Lobe-tour.png"
 import TechWorld from "../assets/images/Tech-World.png"
 import SplitPay from "../assets/images/Split-Pay.png"
+import Map from "../assets/images/Map.png"
 import { Link, ChevronLeft, ChevronRight } from "lucide-react"
 import { RiGithubFill } from "@remixicon/react"
 
@@ -56,7 +57,15 @@ const Projects = () => {
       tech: "ReactJS - TailwindCSS",
       demoUrl: "https://bumbu-app.vercel.app/",
       githubUrl: "https://github.com/treasureaiyedun/bumbu-app"
-    }
+    },
+    // {
+    //   id: 6,
+    //   image: Map,
+    //   title: "Campus Map",
+    //   description: "An interactive campus map to enhance on-campus navigation for students, improving accessibility and location awareness.",
+    //   demoUrl: "https://babcock-maps-u2ro.onrender.com/",
+    //   githubUrl: "https://github.com/treasureaiyedun/open-source-systems-development-moon-beam"
+    // }
   ]
 
   useEffect(() => {
@@ -141,20 +150,6 @@ const Projects = () => {
             </div>
           ))}
         </div>
-
-        {/* Indicators */}
-        {/* <div className="flex justify-center mt-6 space-x-2 mb-5">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full ${
-                index === currentIndex ? "bg-blue-500" : "bg-gray-300 dark:bg-gray-600"
-              }`}
-              aria-label={`Go to project ${index + 1}`}
-            />
-          ))}
-        </div> */}
       </div>
     </div>
     </div>

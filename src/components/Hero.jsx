@@ -22,7 +22,7 @@ const Hero = ({ scrollToSection }) => {
           <p className="text-2xl ">Frontend Engineer {"."} Problem Solver</p>
 
           <div className="flex flex-col lg:flex-row gap-4 mt-10">
-            <a href="https://drive.google.com/file/d/14ZT64kZJHecDXk04ykG3t52VOV2a-CLe/view">
+            <a href="https://drive.google.com/file/d/1coZLVtsdgcPbe6dWad2WZw8_niQfnYV1/view">
               <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 w-full ">
                 View my resume
               </button>
