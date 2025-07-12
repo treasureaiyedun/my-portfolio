@@ -4,7 +4,6 @@ import Bumbu from "../assets/images/Bumbu.png"
 import LobeTour from "../assets/images/Lobe-tour.png"
 import TechWorld from "../assets/images/Tech-World.png"
 import SplitPay from "../assets/images/Split-Pay.png"
-import Map from "../assets/images/Map.png"
 import { Link, ChevronLeft, ChevronRight } from "lucide-react"
 import { RiGithubFill } from "@remixicon/react"
 
@@ -58,14 +57,6 @@ const Projects = () => {
       demoUrl: "https://bumbu-app.vercel.app/",
       githubUrl: "https://github.com/treasureaiyedun/bumbu-app"
     },
-    // {
-    //   id: 6,
-    //   image: Map,
-    //   title: "Campus Map",
-    //   description: "An interactive campus map to enhance on-campus navigation for students, improving accessibility and location awareness.",
-    //   demoUrl: "https://babcock-maps-u2ro.onrender.com/",
-    //   githubUrl: "https://github.com/treasureaiyedun/open-source-systems-development-moon-beam"
-    // }
   ]
 
   useEffect(() => {
