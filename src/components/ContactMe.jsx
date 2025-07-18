@@ -65,7 +65,7 @@ export default function ContactSection() {
           <p className="mb-8">
             For more info, here's my {" "}
             <a
-              href="https://drive.google.com/file/d/1eHIKjT6wMlWaMInWWtw46Q7NXd5RqW7w/view"
+              href="https://drive.google.com/file/d/1cMVRRTvavlqltpeksNJNNO9ciEe4Ya7o/view"
               className="text-pink-400 underline"
               target="_blank"
               rel="noopener noreferrer"
