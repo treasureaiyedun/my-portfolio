@@ -93,7 +93,7 @@ const Projects = () => {
       id="projects"
       className="lg:h-screen flex flex-col justify-center md:mt-0 mt-10 border-b-[1px] border-black dark:border-gray-300"
     >
-      <div className="lg:mb-24 text-2xl text-center md:text-left font-bold mb-8 mt-10 md:mt-0 lg:mt-4 md:mb-12 lg:px-0 px-6">Featured Projects</div>
+      <div className="lg:mb-24 text-2xl text-center md:text-left font-bold mb-8 mt-10 md:mt-0 lg:mt-4 md:mb-12 lg:px-0 px-6 font-heading">Featured Projects</div>
 
       <div className="relative mx-auto" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
         <button
@@ -122,14 +122,14 @@ const Projects = () => {
                 hover:scale-100 hover:z-20 hover:opacity-100`}
             >
               <img src={project.image} alt={project.title} className="w-full h-auto rounded-lg shadow-lg" loading="lazy" />
-              <h1 className="uppercase font-medium mt-2">{project.title}</h1>
-              <p className="mt-3 md:mt-2">{project.description}</p>
+              <h1 className="uppercase font-semibold tracking-wide mt-2 font-heading">{project.title}</h1>
+              <p className="mt-3 md:mt-2 text-sm dark:text-[#bcbfc4] text-[#27282a]">{project.description}</p>
               <p className="text-xs text-blue-500 mt-4">{project.tech}</p>
               <div className="flex justify-between">
                 <div>
-                  <a href={project.demoUrl} className="flex mt-4 hover:text-blue-500">
-                    <Link />
-                    <p className="ml-2">Live Demo</p>
+                  <a href={project.demoUrl} className="flex mt-4 hover:text-blue-500 text-sm">
+                    <Link className="w-4 h-4"/>
+                    <p className="ml-1">Live Demo</p>
                   </a>
                 </div>
                 <div>

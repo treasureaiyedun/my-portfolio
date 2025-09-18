@@ -52,7 +52,7 @@ export default function ContactSection() {
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center md:items-start">
         <div className="px-6 md:px-0">
-          <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
+          <h2 className="text-4xl font-bold mb-4 font-heading">Get in Touch</h2>
           <p className="text-lg mb-4">
             Feel free to reach out to me at {" "}
             <a
@@ -96,14 +96,14 @@ export default function ContactSection() {
 
         <form
           onSubmit={handleSubmit}
-          className=" px-6 rounded-lg space-y-4"
+          className="px-6 rounded-lg space-y-4"
         >
           {[{ label: "Name", id: "name", type: "text" },
           { label: "Email", id: "email", type: "email" }, 
            { label: "Subject", id: "subject", type: "text"
           }].map(({ label, id, type }) => (
             <div key={id}>
-              <label htmlFor={id} className="block mb-1 font-medium">
+              <label htmlFor={id} className="block mb-1 font-medium font-heading">
                 {label}
               </label>
               <input
@@ -120,7 +120,7 @@ export default function ContactSection() {
           ))}
 
           <div>
-            <label htmlFor="message" className="block mb-1 font-medium">
+            <label htmlFor="message" className="block mb-1 font-medium font-heading">
               Message
             </label>
             <textarea

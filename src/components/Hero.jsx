@@ -4,22 +4,21 @@ import HeroImg from "../assets/images/hero.jpg";
 const Hero = ({ scrollToSection }) => {
   return (
     <div className="w-full max-w-7xl mx-auto">
-      <section className="flex items-center justify-center min-h-screen px-4 lg:px-20" id="home">
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 w-full max-w-7xl">
-        
+      <section className="flex items-center justify-center min-h-screen px-4 lg:px-10 max-w-7xl mx-auto" id="home">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 w-full">
         <div className="flex-1 text-center lg:text-left">
           <div className="inline-block bg-purple-500 text-white px-4 py-2 rounded-lg text-sm font-medium mb-6 transform -rotate-2 ">
             Hi there!
           </div>
 
-          <h1 className="text-5xl font-bold leading-tight mb-6">
+          <h1 className="text-5xl font-bold leading-tight mb-6 font-work-sans">
             I'm{" "}
             <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
               Treasure Aiyedun
             </span>
           </h1>
 
-          <p className="text-2xl ">Frontend Engineer {"."} Problem Solver</p>
+          <p className="text-xl ">Frontend Engineer <span className="font-bold">.</span> Problem Solver</p>
 
           <div className="flex flex-col lg:flex-row gap-4 mt-10">
             <a href="https://drive.google.com/file/d/1cMVRRTvavlqltpeksNJNNO9ciEe4Ya7o/view">

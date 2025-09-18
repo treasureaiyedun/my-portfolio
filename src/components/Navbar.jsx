@@ -24,7 +24,7 @@ const Navbar = ({ scrollToSection }) => {
   return (
     <nav
       ref={navRef}
-      className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 mt-10"
+      className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 mt-10 "
     >
       <div
         className={`flex items-center p-2 shadow-xl shadow-slate-300 rounded-full transition-all duration-300 dark:shadow-gray-900 dark:shadow-lg animate-bounce
@@ -33,7 +33,7 @@ const Navbar = ({ scrollToSection }) => {
       >
         <div className="font-bold text-xl mr-3">TA.</div>
 
-        <div className="flex-1 flex items-center justify-between">
+        <div className="flex-1 flex items-center justify-between font-text">
           {isOpen && (
             <ul className="flex pl-1 md:pl-3 items-center space-x-3 md:space-x-4 text-sm font-medium">
               <li>
@@ -95,7 +95,7 @@ const Navbar = ({ scrollToSection }) => {
 
         <button
           onClick={toggleNavbar}
-          className="ml-3 text-black dark:text-white"
+          className="mr-3 text-black dark:text-white"
           aria-label="Toggle menu"
         >
           {isOpen ? (
