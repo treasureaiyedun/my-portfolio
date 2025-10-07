@@ -12,7 +12,7 @@ import next from "../assets/images/next.png";
 import typescript from "../assets/images/typescript.png";
 
 const AboutMe = () => {
-  const [tickerPlaying, setTickerPlaying] = useState(true);
+    const [tickerPlaying, setTickerPlaying] = useState(true);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, threshold: 0.3 });
 
@@ -42,7 +42,7 @@ const AboutMe = () => {
           transition={{ duration: 0.6 }}
           className="text-center text-3xl font-extrabold pt-10 border-t border-gray-300 dark:border-gray-600 lg:pt-20 font-heading"
         >
-          About Me
+          About Me 👋
         </motion.h1>
 
         {/* Bio */}
@@ -56,8 +56,8 @@ const AboutMe = () => {
             Hi there! I'm{" "}
             <span className="font-semibold text-indigo-600 dark:text-indigo-400">
               Treasure
-            </span>{" "}
-            — a{" "}
+            </span>{","}
+            a{" "}
             <span className="font-semibold text-pink-600 dark:text-pink-400">
               Frontend Engineer
             </span>{" "}
@@ -81,7 +81,7 @@ const AboutMe = () => {
         </motion.div>
 
         {/* Tech Stack */}
-        <h1 className="text-center text-2xl font-bold py-10 font-heading">My Tech Stack</h1>
+        <h1 className="text-center text-2xl font-bold py-10 font-heading">My Tech Stack 🧰</h1>
         <div
           className="w-full overflow-hidden"
           onMouseEnter={() => setTickerPlaying(false)}
@@ -92,7 +92,7 @@ const AboutMe = () => {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.1 }}
-                className="rounded-xl bg-gray-50 dark:bg-[#1a1a23] shadow-md cursor-pointer mx-6 w-28 h-28 flex flex-col items-center justify-center transition-transform"
+                className="rounded-xl bg-gray-50 dark:bg-[#1a1a23] shadow-md cursor-pointer mx-6 w-28 h-28 flex flex-col items-center justify-center transition-transform mb-10"
               >
                 <img
                   src={tech.image}

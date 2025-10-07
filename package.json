@@ -12,7 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@remixicon/react": "^4.2.0",
+    "@remixicon/react": "^4.6.0",
     "framer-motion": "^12.16.0",
     "framer-motion-ticker": "^1.0.19",
     "he": "^1.2.0",

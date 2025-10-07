@@ -27,7 +27,7 @@ const Navbar = ({ scrollToSection }) => {
       className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 mt-10 "
     >
       <div
-        className={`flex items-center p-2 shadow-xl shadow-slate-300 rounded-full transition-all duration-300 dark:shadow-gray-900 dark:shadow-lg animate-bounce
+        className={`flex items-center p-2 shadow-xl shadow-slate-300 rounded-full transition-all duration-300 dark:shadow-gray-900 dark:shadow-lg text-xs
           ${isOpen ? 'w-[400px] md:w-[420px] bg-white dark:bg-[#0f0f0f]' : 'w-[220px] bg-white dark:bg-[#0f0f0f]'}
         `}
       >
