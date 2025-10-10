@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ExternalLink, Clock, CheckCircle } from "lucide-react";
 import { RiGithubFill } from "@remixicon/react";
 import AtomicLite from "../assets/images/Atomic-Lite.png";
-import Base from "../assets/images/Base.png"
+import Bloom from "../assets/images/Bloom.png"
 import Bumbu from "../assets/images/Bumbu.png";
 // import Spark from "../assets/images/Spark.png";
 import TechWorld from "../assets/images/Tech-World.png";
@@ -36,9 +36,9 @@ const Projects = () => {
     },
     {
       id: 3,
-      image: Base,
-      title: "Base",
-      description: "A business operations dashboard that combines invoicing, customer management, scheduling, and task tracking, designed for small to medium-sized companies, freelancers, or teams to manage their workflow efficiently.",
+      image: Bloom,
+      title: "Bloom",
+      description: "A personal project aimed at creating a digital garden for tracking and nurturing ideas, featuring a clean and intuitive interface.",
       stack: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion", "Recharts", "Redux Toolkit"],
       demoUrl: "#",
       githubUrl: "https://github.com/treasureaiyedun/base",
