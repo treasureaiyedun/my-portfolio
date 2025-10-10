@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ExternalLink, Clock, CheckCircle } from "lucide-react";
 import { RiGithubFill } from "@remixicon/react";
 import AtomicLite from "../assets/images/Atomic-Lite.png";
-import Base from "../assets/images/Base.png";
+import Base from "../assets/images/Base.png"
 import Bumbu from "../assets/images/Bumbu.png";
 // import Spark from "../assets/images/Spark.png";
 import TechWorld from "../assets/images/Tech-World.png";
