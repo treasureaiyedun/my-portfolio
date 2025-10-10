@@ -5,7 +5,7 @@ import { RiGithubFill } from "@remixicon/react";
 import AtomicLite from "../assets/images/Atomic-Lite.png";
 import Base from "../assets/images/Base.png";
 import Bumbu from "../assets/images/Bumbu.png";
-import Spark from "../assets/images/Spark.png";
+// import Spark from "../assets/images/Spark.png";
 import TechWorld from "../assets/images/Tech-World.png";
 import SplitPay from "../assets/images/Split-Pay.png";
 
@@ -44,16 +44,16 @@ const Projects = () => {
       githubUrl: "https://github.com/treasureaiyedun/base",
       status: "in-progress",
     },
-    {
-      id: 4,
-      image: Spark,
-      title: "Spark",
-      description: "Spark is a business growth and AI consulting agency that helps founders and companies automate operations, optimize performance, and scale faster through data-driven strategies, intelligent systems, and actionable insights.",
-      stack: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion"],
-      demoUrl: "https://spark-topaz.vercel.app/",
-      githubUrl: "https://github.com/treasureaiyedun/spark",
-      status: "completed",
-    },
+    // {
+    //   id: 4,
+    //   image: Spark,
+    //   title: "Spark",
+    //   description: "Spark is a business growth and AI consulting agency that helps founders and companies automate operations, optimize performance, and scale faster through data-driven strategies, intelligent systems, and actionable insights.",
+    //   stack: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion"],
+    //   demoUrl: "https://spark-topaz.vercel.app/",
+    //   githubUrl: "https://github.com/treasureaiyedun/spark",
+    //   status: "completed",
+    // },
     {
       id: 5,
       image: SplitPay,
