@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ExternalLink, Clock, CheckCircle } from "lucide-react";
 import { RiGithubFill } from "@remixicon/react";
 import AtomicLite from "../assets/images/Atomic-Lite.png";
-import Synera from "../assets/images/Synera.png";
+import Zentry from "../assets/images/Synera.png";
 import Finora from "../assets/images/Finora.png";
 import Bumbu from "../assets/images/Bumbu.png";
 import TechWorld from "../assets/images/Tech-World.png";
@@ -38,9 +38,20 @@ const Projects = () => {
       status: "completed",
     },
     {
-      id: 3,
-      image: Synera,
-      title: "Synera",
+    id: 3,
+    image: Bumbu,
+    title: "Bumbu App",
+    description:
+    "A sleek, responsive website built for a car trading app, showcasing listings and app features with a clean, modern UI.",
+    stack: ["ReactJS", "TailwindCSS"],
+    demoUrl: "https://bumbu-app.vercel.app/",
+    githubUrl: "https://github.com/treasureaiyedun/bumbu-app",
+    status: "completed",
+  },
+    {
+      id: 4,
+      image: Zentry,
+      title: "Zentry",
       description:
         "A business operations dashboard that combines invoicing, customer management, scheduling, and task tracking, designed for small to medium-sized companies, freelancers, or teams to manage their workflow efficiently.",
       stack: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion", "Recharts", "Redux Toolkit"],
@@ -49,21 +60,11 @@ const Projects = () => {
       status: "in-progress",
     },
     {
-      id: 4,
-      image: Finora,
-      title: "Finora",
-      description: "Finora is a modern, user-friendly financial dashboard designed to help individuals, freelancers, and small businesses track income, expenses, and cash flow in real time.",
-      stack: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion", "Radix UI", "Recharts", "Zustand"],
-      demoUrl: "#",
-      githubUrl: "https://github.com/treasureaiyedun/finora",
-      status: "in-progress",
-    },
-    {
       id: 5,
       image: SplitPay,
       title: "SplitPay",
       description:
-        "SplitPay is a web-based application designed to simplify the process of dividing bills among multiple people, even when they are using different currencies.",
+      "SplitPay is a web-based application designed to simplify the process of dividing bills among multiple people, even when they are using different currencies.",
       stack: ["Next.js", "TypeScript", "TailwindCSS", "FastAPI"],
       demoUrl: "https://split-pay-two.vercel.app/",
       githubUrl: "https://github.com/treasureaiyedun/split-pay",
@@ -71,14 +72,13 @@ const Projects = () => {
     },
     {
       id: 6,
-      image: Bumbu,
-      title: "Bumbu App",
-      description:
-        "A sleek, responsive website built for a car trading app, showcasing listings and app features with a clean, modern UI.",
-      stack: ["ReactJS", "TailwindCSS"],
-      demoUrl: "https://bumbu-app.vercel.app/",
-      githubUrl: "https://github.com/treasureaiyedun/bumbu-app",
-      status: "completed",
+      image: Finora,
+      title: "Finora",
+      description: "Finora is a modern, user-friendly financial dashboard designed to help individuals, freelancers, and small businesses track income, expenses, and cash flow in real time.",
+      stack: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion", "Radix UI", "Recharts", "Zustand"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/treasureaiyedun/finora",
+      status: "in-progress",
     },
   ];
 
