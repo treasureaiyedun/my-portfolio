@@ -56,7 +56,7 @@ const AboutMe = () => {
             Hi there! I'm{" "}
             <span className="font-semibold text-indigo-600 dark:text-indigo-400">
               Treasure
-            </span>{","}
+            </span>{", "}
             a{" "}
             <span className="font-semibold text-pink-600 dark:text-pink-400">
               Frontend Engineer
