@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, ExternalLink, Clock, CheckCircle } from "luc
 import { RiGithubFill } from "@remixicon/react";
 import AtomicLite from "../assets/images/Atomic-Lite.png";
 import Synera from "../assets/images/Synera.png";
+import Finora from "../assets/images/Finora.png";
 import Bumbu from "../assets/images/Bumbu.png";
 import TechWorld from "../assets/images/Tech-World.png";
 import SplitPay from "../assets/images/Split-Pay.png";
@@ -45,6 +46,16 @@ const Projects = () => {
       stack: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion", "Recharts", "Redux Toolkit"],
       demoUrl: "#",
       githubUrl: "https://github.com/treasureaiyedun/base",
+      status: "in-progress",
+    },
+    {
+      id: 4,
+      image: Finora,
+      title: "Finora",
+      description: "Finora is a modern, user-friendly financial dashboard designed to help individuals, freelancers, and small businesses track income, expenses, and cash flow in real time.",
+      stack: ["Next.js", "TailwindCSS", "TypeScript", "Framer Motion", "Radix UI", "Recharts", "Zustand"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/treasureaiyedun/finora",
       status: "in-progress",
     },
     {
